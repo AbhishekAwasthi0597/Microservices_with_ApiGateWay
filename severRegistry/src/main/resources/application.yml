@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: your-client-service-name  # Replace with your actual service name
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # Replace with the actual URL of your Eureka server
+  instance:
+    hostname: your-service-hostname  # Replace with the actual hostname or IP address of your service
+    preferIpAddress: true
