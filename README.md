@@ -29,16 +29,19 @@ The system comprises several microservices, each responsible for a specific aspe
 - **Endpoints**:
   - `POST /quizzes`: Create a new quiz
   - `GET /quizzes/{id}`: Retrieve quiz details
-  - `GET /quizzes/`: Retrieve  all quiz details
+  - `GET /quizzes/`: Retrieve all quiz details
 
 ### Questions Services
 - **Endpoints**:
   - `POST /quizzes/{quizId}/questions`: Add a new question to a quiz
   - `GET /quizzes/{quizId}/questions/{questionId}`: Retrieve question details
-  - 
 
 ## External Dependencies
 - **Databases**: Each microservice interacts with its own dedicated database to store and retrieve data.
+
+## Service Discovery and Load Balancing
+- **Service Registry**: Eureka Netflix Server is used for service registry and load balancing. It allows services to find and communicate with each other without hard-coding hostname and port.
+- **Feign Client**: The Feign client is used to connect the Quiz Service to the Question Service, facilitating inter-service communication.
 
 ## Additional Notes
 - The system is designed to be scalable, with each microservice able to be developed, deployed, and scaled independently.
